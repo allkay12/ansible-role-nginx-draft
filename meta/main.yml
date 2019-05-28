@@ -4,6 +4,9 @@ galaxy_info:
   author: Niko Smeds
   description: An ugly nginx role that could use some linting
 
+  license: license (MIT)
+  min_ansible_version: 2.7
+
   platforms:
   - name: EL
     versions:
