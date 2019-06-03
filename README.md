@@ -9,5 +9,3 @@ This role could use some serious improvements.
 1. Read about [Ansible testing strategies](https://docs.ansible.com/ansible/latest/reference_appendices/test_strategies.html), and write integration tests which verify that:
     * services are listening on the expected ports
     * requests to the services return expected results
-
-Testing 123456789.
