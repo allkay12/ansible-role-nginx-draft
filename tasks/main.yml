@@ -11,8 +11,8 @@
     name: nginx
     baseurl: "{{ nginx_base_repository }}"
     description: nginx repository
-    enabled: yes
-    gpgcheck: yes
+    enabled: true
+    gpgcheck: true
 
 - name: start nginx
   become: true
