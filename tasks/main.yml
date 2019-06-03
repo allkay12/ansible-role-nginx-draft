@@ -1,3 +1,4 @@
+---
 - name: add nginx repository signing key
   become: true
   rpm_key:
@@ -23,19 +24,5 @@
 - name: override default home page
   become: true
   copy:
-    content: |
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <title>Hello world.</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <style>body {font: normal 18px Arial; margin: 4em;}</style>
-      </head>
-      <body>
-        <p>
-          YAML supports multi-line blocks using specific indicators.<br />
-          Read more at <a href="https://yaml-multiline.info">YAML-multiline.info</a>.
-        </p>
-      </body>
-      </html>
+    src: ./files/index.html
     dest: /usr/share/nginx/html/index.html
