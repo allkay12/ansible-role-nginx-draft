@@ -1,8 +1,8 @@
 ---
-- name: create user {{ nginx_user }}
+- name: "create user {{ nginx_user }}"
   user:
     become: true
-    name: {{ nginx_user }}
+    name: "{{ nginx_user }}"
     shell: /bin/nologin
     system: true
 
