@@ -23,7 +23,7 @@
 - name: override default home page
   become: true
   copy:
-    src: {{ index_src }}
+    src: "{{ index_src }}"
     dest: /usr/share/nginx/html/index.html
 
 - name: modify nginx status
