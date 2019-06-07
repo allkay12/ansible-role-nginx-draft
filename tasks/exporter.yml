@@ -1,7 +1,7 @@
 ---
 - name: "create user {{ nginx_user }}"
+  become: true
   user:
-    become: true
     name: "{{ nginx_user }}"
     shell: /bin/nologin
     system: true
