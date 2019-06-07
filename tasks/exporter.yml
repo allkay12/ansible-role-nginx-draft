@@ -15,9 +15,9 @@
 - name: extract to /usr/local/bin
   become: true
   unarchive:
+    creates: /usr/local/bin/nginx-prometheus-exporter/
     src: /tmp/nginx-prometheus-exporter-0.4.0-linux-amd64.tar.gz
     dest: /usr/local/bin/nginx-prometheus-exporter/
-    creates: /usr/local/bin/nginx-prometheus-exporter/
     mode: 0644
     remote_src: true
 
