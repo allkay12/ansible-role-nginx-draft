@@ -4,7 +4,6 @@
   rpm_key:
     key: "{{ nginx_signing_key }}"
 
-
 - name: add nginx repository
   become: true
   yum_repository:
@@ -24,7 +23,7 @@
 - name: override default home page
   become: true
   copy:
-    src: ./files/index.html
+    src: {{ index_src }}
     dest: /usr/share/nginx/html/index.html
 
 - name: modify nginx status

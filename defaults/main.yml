@@ -4,3 +4,4 @@ nginx_signing_key: https://nginx.org/keys/nginx_signing.key
 nginx_user: nginx-exp
 nginx_group: "{{ nginx_user }}"
 nginx_scrape_uri: 127.0.0.1:50080
+index_src: index.html
