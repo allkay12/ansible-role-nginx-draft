@@ -32,3 +32,17 @@
     name: nginx_exporter
     state: started
     enabled: true
+
+- name: test port 9113 / metrics
+  uri:
+    url: "http://127.0.0.1:9113/metrics"
+    method: GET
+    return_content: true
+  register: nginx_status
+  failed_when: "'nginx_up 1' not in nginx_status.content"
+
+- name: test port 80
+  uri:
+    url: "http://127.0.0.1"
+    method: GET
+    status_code: 200
