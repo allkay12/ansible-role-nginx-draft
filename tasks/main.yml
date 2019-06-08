@@ -17,8 +17,8 @@
   become: true
   package:
     name: nginx
-    state: present
-  notify: start nginx
+    state: started
+    enabled: true
 
 - name: override default home page
   become: true
