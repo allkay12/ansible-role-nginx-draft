@@ -19,7 +19,7 @@
     name: nginx
     state: present
 
-  name: start nginx
+- name: start nginx
   become: true
   service:
     name: nginx
