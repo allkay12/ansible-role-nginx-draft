@@ -24,6 +24,7 @@
   copy:
     src: "{{ index_src }}"
     dest: /usr/share/nginx/html/index.html
+  notify: restart nginx
 
 - name: modify nginx status
   become: true
@@ -31,11 +32,12 @@
     path: /etc/nginx/conf.d/default.conf
     block: |
       location /nginx_status {
-          stub_status on;
+          stub_status;
           allow 127.0.0.1;
           deny all;
       }
     insertbefore: "#error_page  404              /404.html;"
+  notify: restart nginx
 
 - name: start nginx
   become: true
@@ -43,7 +45,6 @@
     name: nginx
     state: started
     enabled: true
-
 
 - name: prometheus exporter
   include_tasks: exporter.yml
