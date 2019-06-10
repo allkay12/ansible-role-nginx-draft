@@ -19,13 +19,6 @@
     name: nginx
     state: present
 
-- name: start nginx
-  become: true
-  service:
-    name: nginx
-    state: started
-    enabled: true
-
 - name: override default home page
   become: true
   copy:
@@ -43,6 +36,14 @@
           deny all;
       }
     insertbefore: "#error_page  404              /404.html;"
+
+- name: start nginx
+  become: true
+  service:
+    name: nginx
+    state: started
+    enabled: true
+
 
 - name: prometheus exporter
   include_tasks: exporter.yml
