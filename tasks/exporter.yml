@@ -12,17 +12,11 @@
     dest: /tmp/
     mode: 0644
 
-- name: Creates directory
-  become: true
-  file:
-    path: /usr/local/bin/nginx-prometheus-exporter/
-    state: directory
-
 - name: extract to /usr/local/bin
   become: true
   unarchive:
     src: /tmp/nginx-prometheus-exporter-0.4.0-linux-amd64.tar.gz
-    dest: /usr/local/bin/nginx-prometheus-exporter/
+    dest: /usr/local/bin/
     mode: 0644
     remote_src: true
 
